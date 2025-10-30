@@ -1,0 +1,69 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+auto-format = true
+completion-trigger-len = 1
+completion-timeout = 5
+idle-timeout = 800
+text-width = 180
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.smart-tab]
+enable = false
+
+[editor.file-picker]
+hidden = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace.render]
+newline = "all"
+tab = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+C-f = '@"/y/<tab><ret>'
+C-g = '@"/y/<tab><ret>NN'
+C-w = "@emiw"
+C-b = "@bmiwb"
+C-h = "@<home>"
+C-l = "@<end>"
+C-k = "@100000000k"
+C-j = "@100000000j"
+C-u = "@miwbhl u"
+C-d = "no_op"
+"`" = "rotate_view"
+
+[keys.normal.space]
+q = ":write-all"
+u = "switch_to_uppercase"
+U = "@miwbhl u"
+l = "switch_to_lowercase"
+
+[keys.normal.g]
+o = "jump_backward"
+i = "jump_forward"
+
+[keys.normal.'A-q']
+u = "@miwbhl u"
+l = '@ms.ms.ms"'
+
+[keys.normal.z]
+C-f = 'no_op'
+C-b = 'no_op'
+C-u = 'no_op'
+C-d = 'no_op'
