@@ -21,6 +21,7 @@ hidden = true
 
 [editor.lsp]
 display-messages = true
+display-color-swatches = false
 
 [editor.whitespace.render]
 newline = "all"
@@ -33,7 +34,7 @@ tab = "→"
 newline = "⏎"
 
 [editor.soft-wrap]
-enable = true
+enable = false
 
 [keys.normal]
 C-f = '@"/y/<tab><ret>'
@@ -44,12 +45,13 @@ C-h = "@<home>"
 C-l = "@<end>"
 C-k = "@100000000k"
 C-j = "@100000000j"
-C-u = "@miwbhl u"
+C-u = "@miw<space>lb; u"
 C-d = "no_op"
 "`" = "rotate_view"
+ret = ":write-all"
+tab = ":write-all"
 
 [keys.normal.space]
-q = ":write-all"
 u = "switch_to_uppercase"
 U = "@miwbhl u"
 l = "switch_to_lowercase"
@@ -67,3 +69,7 @@ C-f = 'no_op'
 C-b = 'no_op'
 C-u = 'no_op'
 C-d = 'no_op'
+
+[keys.select]
+C-f = '@<esc>"/y/<tab><ret>'
+C-g = '@<esc>"/y/<tab><ret>NN'
