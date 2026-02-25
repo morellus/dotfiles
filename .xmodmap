@@ -1,7 +1,7 @@
+clear Lock
+keycode 66 = F9 F9 F9 F9
 keycode 48 = apostrophe quotedbl
 keycode 49 = grave asciitilde
-clear Lock
-keycode 66 = F12 F12 F12 F12
 keycode 112 = NoSymbol
 keycode 117 = NoSymbol
 keycode 118 = NoSymbol

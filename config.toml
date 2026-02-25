@@ -7,6 +7,13 @@ completion-trigger-len = 1
 completion-timeout = 5
 idle-timeout = 800
 text-width = 180
+color-modes = true
+cursorline = true
+
+[editor.statusline]
+separator = "|"
+left = ["mode", "spacer", "separator", "version-control", "separator", "spacer", "file-absolute-path", "read-only-indicator", "spinner", "file-modification-indicator"]
+right = ["diagnostics", "selections", "register", "position", "file-encoding"]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,11 +24,13 @@ select = "underline"
 enable = false
 
 [editor.file-picker]
-hidden = true
+hidden = false
 
 [editor.lsp]
-display-messages = true
 display-color-swatches = false
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
 
 [editor.whitespace.render]
 newline = "all"
@@ -37,8 +46,8 @@ newline = "⏎"
 enable = false
 
 [keys.normal]
-C-f = '@"/y/<tab><ret>'
-C-g = '@"/y/<tab><ret>NN'
+C-f = '@<A-*>/<up><ret>'
+C-g = '@<A-*>/<up><ret>NN'
 C-w = "@emiw"
 C-b = "@bmiwb"
 C-h = "@<home>"
@@ -50,6 +59,7 @@ C-d = "no_op"
 "`" = "rotate_view"
 ret = ":write-all"
 tab = ":write-all"
+X = ["extend_line_up", "extend_to_line_bounds"]
 
 [keys.normal.space]
 u = "switch_to_uppercase"
@@ -71,5 +81,5 @@ C-u = 'no_op'
 C-d = 'no_op'
 
 [keys.select]
-C-f = '@<esc>"/y/<tab><ret>'
-C-g = '@<esc>"/y/<tab><ret>NN'
+C-f = '@<esc><A-*>/<up><ret>'
+C-g = '@<esc><A-*>/<up><ret>NN'
