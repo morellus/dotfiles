@@ -1,4 +1,3 @@
-alias exai='exa --icons'
 alias la='ls -a --color'
 alias top='ytop -c monokai'
 alias ocat='/usr/bin/cat'
@@ -47,33 +46,38 @@ alias gotofile='z (dirname (fzf))'
 alias fuck='fix'
 alias calc='qalc'
 alias print='lp -d HP_Color_LaserJet_MFP_M283fdw_D03F69'
-set -x HELIX_RUNTIME /home/jan/.config/helix
+
+set -x HELIX_RUNTIME /home/jan/.config/helix/runtime
 set -x SCENERY_LIB_PATH /home/jan/pl/scenery/lib
 set -x XDG_DATA_HOME /home/jan/.local/share/
 set -x XDG_CONFIG_HOME /home/jan/.config/
 set -x EDITOR hx
-set -e LS_COLORS
 set -x ROCM_PATH /opt/rocm-6.4.3/rocm/rocm-6.4.3
 set -x HIP_PATH $rocm_path
 set -x LD_LIBRARY_PATH $rocm_path/lib $rocm_path/lib64 $rocm_path/llvm/lib
+set -x PKG_CONFIG_PATH /usr/local/lib/pkgconfig:/usr/lib/pkgconfig
 
-set -U fish_color_cwd magenta
-set -U fish_color_user magenta
+set fish_color_cwd magenta
+set fish_color_user magenta
 
-fish_add_path $rocm_path/bin $rocm_path/llvm/bin
+set -x SANE_DEFAULT_DEVICE "airscan:e0:HP Color LaserJet MFP M283fdw (D03F69)"
+
+fish_add_path /usr/local/bin
+fish_add_path /usr/bin
+fish_add_path /bin
 fish_add_path /home/jan/bin
+fish_add_path /home/jan/.cargo/bin
+fish_add_path /home/jan/.local/bin
 fish_add_path /home/jan/scripts
-fish_add_path /home/jan/go/bin
 fish_add_path /home/jan/apps/cool-retro-term
-fish_add_path /home/jan/apps/vex-tui
+fish_add_path /usr/games
 
 if status is-interactive
     xmodmap ~/.xmodmap
 
     fish_vi_key_bindings
 
-    # neofetch
-    # fortune | cowsay -f (ls -1 /usr/share/cowsay/cows/ | sort -r | head -1) -n
+    fastfetch --logo-type command-raw --logo "fortune | pandasay --res 64"
     zoxide init fish | source
     fixit init fish | source
 end

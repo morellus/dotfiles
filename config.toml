@@ -9,6 +9,7 @@ idle-timeout = 800
 text-width = 180
 color-modes = true
 cursorline = true
+end-of-line-diagnostics = "disable"
 
 [editor.statusline]
 separator = "|"
@@ -71,7 +72,7 @@ o = "jump_backward"
 i = "jump_forward"
 
 [keys.normal.'A-q']
-u = "@miwbhl u"
+u = "@miwb; u"
 l = '@ms.ms.ms"'
 
 [keys.normal.z]
